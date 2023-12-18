@@ -4,15 +4,15 @@
 
   <script>
 
-    const feed = "https://api.npoint.io/662639f78dc050b16182";
-    
+    const feed = "https://timesofindia.indiatimes.com/rssfeeds/10814799505.cms"; 
+
     async function getRSS() {
-    
+
       const response = await fetch(feed);
-      const data = await response.json();
-    
-      console.log(data);
-    
+      const text = await response.text(); 
+  
+      console.log(text);
+
     }
 
     getRSS();

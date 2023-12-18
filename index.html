@@ -2,17 +2,17 @@
 <html>
 <body>
 
-  <script src="https://cdn.jsdelivr.net/npm/rss-parser@3.12.0/dist/rss-parser.min.js"></script>
-
   <script>
 
-    let proxyurl = 'https://crossorigin.me/';
-    let rssFeed = proxyurl + 'https://timesofindia.indiatimes.com/rssfeedstopstories.cms';
+    const feed = "https://api.npoint.io/662639f78dc050b16182";
     
     async function getRSS() {
-      let parser = new RSSParser();
-      let feed = await parser.parseURL(rssFeed);
-      console.log(feed);
+    
+      const response = await fetch(feed);
+      const data = await response.json();
+    
+      console.log(data);
+    
     }
 
     getRSS();

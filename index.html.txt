@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/rss-parser@3.12.0/dist/rss-parser.min.js"></script>
+  
+  <script>
+    let rssFeed = "https://feeds.npr.org/1001/rss.xml";
+    
+    async function getRSS() {
+      let parser = new RSSParser();
+      let feed = await parser.parseURL(rssFeed);
+      console.log(feed); 
+    }
+    
+    getRSS();
+  </script>
+
+</body>
+</html>

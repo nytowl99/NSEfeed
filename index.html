@@ -1,14 +1,22 @@
-<!DOCTYPE html>  
+<!DOCTYPE html>
 <html>
-<head>
-<title>My Sample Page</title>
-</head>
-
 <body>
 
-<h1>Hello World!</h1>
+  <script src="https://cdn.jsdelivr.net/npm/rss-parser@3.12.0/dist/rss-parser.min.js"></script>
 
-<p>This is a very basic HTML page hosted on GitHub Pages.</p>
+  <script>
+
+    let rssFeed = "https://timesofindia.indiatimes.com/rssfeedstopstories.cms";
+    
+    async function getRSS() {
+      let parser = new RSSParser();
+      let feed = await parser.parseURL(rssFeed);
+      console.log(feed);
+    }
+
+    getRSS();
+
+  </script>
 
 </body>
 </html>
